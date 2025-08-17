@@ -35,9 +35,9 @@ photon_sphere = plt.Circle((0, 0),
                            label='Photon Sphere')
  
 fig, ax = plt.subplots()
-ax.add_patch(shadow_radius)
-ax.add_patch(photon_sphere)
-ax.add_patch(black_hole)
+
+for object in [shadow_radius, photon_sphere, black_hole]:
+    ax.add_artist(object)
 
 plt.xlim(-bh_shadow*1.25, bh_shadow*1.25)
 plt.ylim(-bh_shadow*1.25, bh_shadow*1.25)
@@ -49,5 +49,6 @@ plt.ylabel('y (m)')
 plt.legend()
 plt.grid('--', alpha = 0.3)
 plt.gca().set_aspect('equal', adjustable='box')
-plt.savefig(f'/home/liamhall/github/black_hole/inital_black_hole_{mass}_solarmass.png', dpi=600)
+plt.savefig(f'/home/liamhall/github/black_holes/plots/inital_black_hole_{mass}'\
+            '_solarmass.png', dpi=600)
 plt.show()

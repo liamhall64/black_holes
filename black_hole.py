@@ -3,7 +3,7 @@ import astropy.constants as c
 import astropy.units as u
 import numpy as np
 
-mass = 1 # solar mass
+mass = 2.6e9 # solar mass
 
 def black_hole_calc(M):
     """Calculating the Schwarzschild radius, shadow and photon sphere for a
@@ -11,7 +11,7 @@ def black_hole_calc(M):
     
     solar_mass      = c.M_sun.to(u.kg)
     m               = M * solar_mass
-    r               = 2*c.G*m/c.c**2
+    r               = (2*c.G*m/c.c**2).to(u.au)
     return r
 
 bh_radius       = black_hole_calc(mass).value
@@ -33,7 +33,17 @@ photon_sphere = plt.Circle((0, 0),
                            fill=False,
                            linestyle='-',
                            label='Photon Sphere')
- 
+sun           = plt.Circle((0, 0),
+                           c.R_sun.to(u.au).value,
+                           color='orange',
+                           label='Sun',
+                           fill=True)
+pluto_orbit   = plt.Circle((0, 0),
+                           39.5,
+                           color='tab:blue',
+                           fill=False,
+                           linestyle='--',
+                           label='Pluto Orbit') 
 fig, ax = plt.subplots()
 
 for object in [shadow_radius, photon_sphere, black_hole]:
@@ -42,13 +52,19 @@ for object in [shadow_radius, photon_sphere, black_hole]:
 plt.xlim(-bh_shadow*1.25, bh_shadow*1.25)
 plt.ylim(-bh_shadow*1.25, bh_shadow*1.25)
 
-plt.title(f'Black Hole Diagram for M = {mass} $M_\odot$')
-plt.xlabel('x (m)')
-plt.ylabel('y (m)')
+if black_hole_calc(mass).unit.is_equivalent(u.au):
+    ax.add_artist(pluto_orbit)
+    ax.add_artist(sun)
+    plt.xlabel('x (AU)')
+    plt.ylabel('y (AU)')
+else:
+    plt.xlabel('x (m)')
+    plt.ylabel('y (m)')
 
+plt.title(f'Black Hole Diagram for M = {mass} $M_\odot$')
 plt.legend()
 plt.grid('--', alpha = 0.3)
 plt.gca().set_aspect('equal', adjustable='box')
-plt.savefig(f'/home/liamhall/github/black_holes/plots/inital_black_hole_{mass}'\
-            '_solarmass.png', dpi=600)
+plt.savefig(f'/home/liamhall/github/black_holes/plots/initial_black_hole_'\
+            f'{mass}_solarmass.png', dpi=600)
 plt.show()

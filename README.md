@@ -32,7 +32,7 @@ infinity.
 With this project, I am wanting to replicate the plots, to a certain degree, as 
 seen here from the blog by [**_Prof. David D. Nolte_**](https://galileo-unbound.blog/2019/07/29/orbiting-photons-around-a-black-hole/).
 
-![Plot of black hole and light rays I am somewhat trying to replicate](tests/plots/Lightlike_geodesics.png)
+![Plot of black hole and light rays I am somewhat trying to replicate](plots/Lightlike_geodesics.png)
 *The plot above shows a black hole and an array of photons that trace curved paths from an outsider's perspective.*
 
 The paths that are traced by photons are null geodesics — paths that massless

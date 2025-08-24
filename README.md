@@ -18,3 +18,18 @@ singularity, or spiral outwards towards infinity.
 of light were to travel towards the black hole, then light at 2.6 times the 
 event horizon radii will just skim the photon sphere and then end tend to 
 infinity.
+
+With this project, I am wanting to replicate the plots, to a certain degree, as 
+seen here from the blog by [**_Prof. David D. Nolte_**]
+(https://galileo-unbound.blog/2019/07/29/orbiting-photons-around-a-black-hole/).
+
+[Plot of black hole and light rays I am somewhat trying to replicate](tests/plots/Lightlike_geodesics.png)
+*The plot above shows a black hole and an array of photons that trace curved paths from an outsider's perspective.*
+
+The paths that are traced by photons are null geodesics — paths that massless
+ particles (such as light) take through the fabric of space-time in general 
+relativity.
+
+I want to be able to plot multiple paths of light coming from one side of the 
+plot and interact with the black hole following the null geodesics to see how 
+light behaves around black holes with different masses.

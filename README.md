@@ -45,7 +45,7 @@ light behaves around black holes with different masses.
 
 ### Extras
 
-Please feel free to get in touch with me via LinkedIn or by cloning the 
-repository yourself and making a new branch with your own changes. Anything will
- be greatly appreciated and I encourage constructive criticism. After all, we 
-are all still learning and I am eager to hear new ideas!
+Please feel free to get in touch with me via [LinkedIn](https://www.linkedin.com/in/liam-hall01/) 
+or by cloning the repository yourself and making a new branch with your own 
+changes. Anything will be greatly appreciated and I encourage constructive 
+criticism. After all, we are all still learning and I am eager to hear new ideas!
